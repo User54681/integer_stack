@@ -18,7 +18,7 @@ public:
 };
 
 Stack::Stack(int size) {
-    values = new int[size];
+    values = new int[size] {0};
 }
 
 Stack::~Stack() {
@@ -50,7 +50,8 @@ int Stack::copy() {
 }
 
 class Node {
-
+    int key;
+    Node* p;
 };
 
 int main()
