@@ -1,6 +1,8 @@
 #include "STACK.h"
+#include <iostream>
 
-Stack::Stack() {
+Stack::Stack(int size) {
+    lenght = size;
     top = NULL;
 }
 
@@ -11,10 +13,16 @@ Stack::~Stack() {
 }
 
 void Stack::push(int value) {
-    Node* new_node = new Node;
-    new_node->item = value;
-    new_node->p = top;
-    top = new_node;
+    if (count > lenght) {
+        std::cout << "Stack is overflow" << "\n";
+    } 
+    else {
+        Node* new_node = new Node;
+        new_node->item = value;
+        new_node->p = top;
+        top = new_node;
+        ++count;
+    }
 }
 
 int Stack::pop() {
@@ -27,23 +35,41 @@ int Stack::pop() {
         Node* temp = top;
         top = top->p;
         delete temp;
+        --count;
+        std::cout << "The last element of stack has been deleted" << "\n";
+        return 0;
     }
 }
 
-int Stack::remove() {
-
+void Stack::remove() {
+    while (!empty()) {
+        pop();
+    }
 }
 
 void Stack::print() {
-
+    if (empty()) {
+        std::cout << "Stack is empty" << "\n";
+    }
+    else {
+        int cnt = count;
+        Node* p = top;
+        while (cnt != 0) {
+            std::cout << p->item << "\t";
+            p = p->p;
+            --cnt;
+        }
+        std::cout << "\n";
+        delete p;
+    }
 }
 
-int Stack::size() {
-
+void Stack::size() {
+    std::cout << "Stack is size of " << count << "\n";
 }
 
 int Stack::copy() {
-
+    return 0;
 }
 
 bool Stack::empty() {

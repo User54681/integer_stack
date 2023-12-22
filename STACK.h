@@ -10,15 +10,17 @@ struct Node {
 class Stack {
 private:
     Node* top;
+    int count = 0;
+    int lenght;
 public:
-    Stack();
+    Stack(int size);
     ~Stack();
 
     void push(int value);
     int pop();
-    int remove();
+    void remove();
     void print();
-    int size();
+    void size();
     int copy();
     bool empty();
 };
