@@ -15,10 +15,14 @@ int main()
     stack.push(6);
     stack.push(8);
     stack.push(1);
-    stack.size();
+    std::cout << "Stack is size of " << stack.size() << "\n";
     stack.print();
     stack.pop();
-    stack.size();
+    std::cout << "Stack is size of " << stack.size() << "\n";
     stack.print();
+    Stack stack2(len-1);
+    stack2.copy(stack);
+    std::cout << "The copied stack: "; 
+    stack2.print();
     return 0;
 }

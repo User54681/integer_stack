@@ -8,7 +8,11 @@ Stack::Stack(int size) {
 
 Stack::~Stack() {
     while (top != NULL) {
-        pop();
+        int popped = top->item;
+        Node* temp = top;
+        top = top->p;
+        delete temp;
+        --count;
     }
 }
 
@@ -34,9 +38,9 @@ int Stack::pop() {
         int popped = top->item;
         Node* temp = top;
         top = top->p;
+        std::cout << "The last element of stack has been deleted: " << temp->item << "\n";
         delete temp;
         --count;
-        std::cout << "The last element of stack has been deleted" << "\n";
         return 0;
     }
 }
@@ -64,11 +68,35 @@ void Stack::print() {
     }
 }
 
-void Stack::size() {
-    std::cout << "Stack is size of " << count << "\n";
+int Stack::size() {
+    //std::cout << "Stack is size of " << count << "\n";
+    return count;
 }
 
-int Stack::copy() {
+int Stack::copy(Stack& source) {
+    if (source.empty()) {
+        std::cout << "Stack is empty" << "\n";
+    }
+    else {
+        int cnt = source.size();
+        Stack temp(cnt); 
+        Node* p = source.top;
+        while (cnt > 0) {
+            temp.push(p->item);
+            p = p->p;
+            --cnt;
+        }
+        delete p;
+        cnt = source.size();
+        Node* pp = temp.top;
+        while (cnt > 0) {
+            push(pp->item);
+            pp = pp->p;
+            --cnt;
+        }
+        delete pp;
+        temp.~Stack();
+    }
     return 0;
 }
 

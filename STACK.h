@@ -20,8 +20,8 @@ public:
     int pop();
     void remove();
     void print();
-    void size();
-    int copy();
+    int size();
+    int copy(Stack& source);
     bool empty();
 };
 

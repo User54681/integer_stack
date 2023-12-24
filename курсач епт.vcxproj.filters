@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="курсач епт.cpp">
+    <ClCompile Include="курсач.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="STACK.cpp">

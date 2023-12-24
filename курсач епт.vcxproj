@@ -24,6 +24,7 @@
     <ProjectGuid>{6c44f956-bca6-48e5-898a-964a4dd58354}</ProjectGuid>
     <RootNamespace>курсачепт</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>курсач</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -128,7 +129,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="STACK.cpp" />
-    <ClCompile Include="курсач епт.cpp" />
+    <ClCompile Include="курсач.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="STACK.h" />
